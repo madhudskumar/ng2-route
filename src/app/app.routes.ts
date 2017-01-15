@@ -1,9 +1,10 @@
 import {UserComponent} from "./user/user.component";
 import {HomeComponentComponent} from "./home-component.component";
-import {RouterModule} from "@angular/router"
+import {RouterModule, NavigationExtras} from "@angular/router"
+
 
 const APP_ROUTES = [
-  { path: 'user', component:  UserComponent },
+  { path: 'user/:id', component:  UserComponent },
   { path: '', component: HomeComponentComponent}
 ];
 

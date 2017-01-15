@@ -1,6 +1,7 @@
-import {Component, OnDestroy} from '@angular/core';
-import {Subscription} from "rxjs";
-import { Router } from "@angular/router";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription, Observable} from "rxjs";
+import 'rxjs/add/operator/map'
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'route-home-component',
@@ -9,8 +10,16 @@ import { Router } from "@angular/router";
       home-component
     </p>
     <hr>
+    {{analytics | async}}
   `,
   styles: []
 })
-export class HomeComponentComponent {
+export class HomeComponentComponent implements OnInit{
+  private analytics:Observable<string>;
+  constructor(private activatedRoute:ActivatedRoute){
+  }
+
+  ngOnInit(){
+    this.analytics = this.activatedRoute.queryParams.map(params => params['analytics'] || 'none')
+  }
 }
