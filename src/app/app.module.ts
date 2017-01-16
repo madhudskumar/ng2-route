@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user/user-detail.component';
 import { UserEditComponent } from './user/user-edit.component';
 import {APP_ROUTES_PATH, USER_CHILD_ROUTES_PATH} from "./app.routes";
+import {UserDetailGuard} from "./user/userdetail.guard";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {APP_ROUTES_PATH, USER_CHILD_ROUTES_PATH} from "./app.routes";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ UserDetailGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
