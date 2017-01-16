@@ -34,7 +34,7 @@ export class UserComponent implements OnInit, OnDestroy {
     let homeComponentNavigationExtras:NavigationExtras = {
       queryParams:{'analytics':x}
     }
-    this.router.navigate(['/'], homeComponentNavigationExtras)
+      this.router.navigate(['/'], homeComponentNavigationExtras)
   }
 
   ngOnDestroy(){

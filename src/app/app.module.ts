@@ -10,6 +10,7 @@ import { UserDetailComponent } from './user/user-detail.component';
 import { UserEditComponent } from './user/user-edit.component';
 import {APP_ROUTES_PATH, USER_CHILD_ROUTES_PATH} from "./app.routes";
 import {UserDetailGuard} from "./user/userdetail.guard";
+import {UserEditGuard} from "./user/user-edit.guard";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {UserDetailGuard} from "./user/userdetail.guard";
     FormsModule,
     HttpModule
   ],
-  providers: [ UserDetailGuard ],
+  providers: [ UserDetailGuard , UserEditGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
