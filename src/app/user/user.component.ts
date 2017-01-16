@@ -11,6 +11,7 @@ import {Subscription} from "rxjs";
     <h1>Back Home</h1>
      <button (click)="goHome()">go home</button>
      <hr>
+     <router-outlet></router-outlet>
      {{id}}
   `,
   styles: []

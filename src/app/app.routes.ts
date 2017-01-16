@@ -1,11 +1,24 @@
 import {UserComponent} from "./user/user.component";
 import {HomeComponentComponent} from "./home-component.component";
-import {RouterModule, NavigationExtras} from "@angular/router"
+import {RouterModule, Routes} from "@angular/router"
+import {USER_CHILD_ROUTES} from "./user/user.routes";
 
 
-const APP_ROUTES = [
-  { path: 'user/:id', component:  UserComponent },
-  { path: '', component: HomeComponentComponent}
+const APP_ROUTES: Routes = [
+  {
+    path: 'user/:id',
+    component:  UserComponent,
+  },
+  {
+    path: '',
+    component: HomeComponentComponent
+  },
+  {
+    path:'user',
+    redirectTo:'/user/7'
+  }
 ];
 
+
 export const APP_ROUTES_PATH = RouterModule.forRoot(APP_ROUTES);
+export const USER_CHILD_ROUTES_PATH = RouterModule.forChild(USER_CHILD_ROUTES);
